@@ -1,0 +1,16 @@
+[
+{
+  "modid": "electricraft",
+  "name": "Electricraft",
+  "description": "",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["firck"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
