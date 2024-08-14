@@ -1,0 +1,10 @@
+# items
+
+item.silicon_dust.name=Silicon Dust
+item.silica_dust.name=Silica Dust
+item.magnesium_dust.name=Magnesium Dust
+item.magnesia_dust.name=Magnesia Dust
+
+# blocks
+
+tile.silica_sand.name=Silica Sand
