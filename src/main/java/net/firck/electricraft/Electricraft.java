@@ -42,14 +42,16 @@ public class Electricraft {
     {
         logger = event.getModLog();
 
-        FluidRegistry.registerFluid(ModFluids.HYDROGEN);
-        FluidRegistry.addBucketForFluid(ModFluids.HYDROGEN);
+        ModFluids.FLUIDS.add(ModFluids.HYDROGEN);
+        ModFluids.FLUIDS.add(ModFluids.CARBON_DIOXIDE);
+
+        for (Fluid fluid : ModFluids.FLUIDS){
+            FluidRegistry.registerFluid(fluid);
+            FluidRegistry.addBucketForFluid(fluid);
+        }
 
         GameRegistry.registerWorldGenerator(new ModWorldGen(), 69);
 
-        /*for (Fluid fluid : ModFluids.FLUIDS){
-            FluidRegistry.registerFluid(fluid);
-        }*/
     }
 
     @EventHandler

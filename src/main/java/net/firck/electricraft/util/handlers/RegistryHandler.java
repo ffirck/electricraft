@@ -41,6 +41,7 @@ public class RegistryHandler {
     public static void onModelRegister(ModelRegistryEvent e){
 
         RenderHandler.registerCustomMeshesAndStates(new ResourceLocation(Electricraft.MODID, "hydrogen"), ModBlocks.HYDROGEN_BLOCK);
+        RenderHandler.registerCustomMeshesAndStates(new ResourceLocation(Electricraft.MODID, "carbon_dioxide"), ModBlocks.CARBON_DIOXIDE_BLOCK);
 
 
         for(Item i : ModItems.ITEMS){

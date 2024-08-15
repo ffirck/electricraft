@@ -8,8 +8,8 @@ item.magnesia_dust.name=Magnesia Dust
 # blocks
 
 tile.silica_sand.name=Silica Sand
-tile.hydrogen_block.name=Hydrogen
 
 # fluids
 
 fluid.hydrogen=Hydrogen
+fluid.carbon_dioxide=Carbon Dioxide

@@ -16,5 +16,6 @@ public class ModBlocks {
 
     public static final Block SILICA_SAND = new SilicaSand("silica_sand", Material.SAND, CreativeTabs.BUILDING_BLOCKS);
     public static final Block HYDROGEN_BLOCK = new BlockFluidBase(ModFluids.HYDROGEN, ModMaterials.GAS_MATERIAL, "hydrogen", CreativeTabs.MISC);
+    public static final Block CARBON_DIOXIDE_BLOCK = new BlockFluidBase(ModFluids.CARBON_DIOXIDE, ModMaterials.GAS_MATERIAL, "carbon_dioxide", CreativeTabs.MISC);
 
 }
