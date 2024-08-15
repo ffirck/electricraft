@@ -18,5 +18,6 @@ public class ModItems {
     public static final Item SILICA_DUST = new SilicaDust("silica_dust", CreativeTabs.MATERIALS);
     public static final Item MAGNESIUM_DUST = new MagnesiumDust("magnesium_dust", CreativeTabs.MATERIALS);
     public static final Item MAGNESIA_DUST = new MagnesiaDust("magnesia_dust", CreativeTabs.MATERIALS);
+    public static final Item MAGNESITE = new Magnesite("magnesite", CreativeTabs.MATERIALS);
 
 }

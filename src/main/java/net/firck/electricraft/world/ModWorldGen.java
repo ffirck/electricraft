@@ -20,10 +20,12 @@ import java.util.Random;
 public class ModWorldGen implements IWorldGenerator {
 
     private WorldGenerator silica_sand;
+    private WorldGenerator magnesite_ore;
 
     public ModWorldGen(){
 
-        silica_sand = new WorldGenMinable(ModBlocks.SILICA_SAND.getDefaultState(), 32, BlockMatcher.forBlock(Blocks.SAND));
+        silica_sand = new WorldGenMinable(ModBlocks.SILICA_SAND.getDefaultState(), 72, BlockMatcher.forBlock(Blocks.SAND));
+        magnesite_ore = new WorldGenMinable(ModBlocks.MAGNESITE_ORE.getDefaultState(), 12, BlockMatcher.forBlock(Blocks.STONE));
 
     }
     @Override
@@ -42,7 +44,8 @@ public class ModWorldGen implements IWorldGenerator {
 
     private void generateOverworld(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider){
 
-        generateBlock(silica_sand, world, random, chunkX, chunkZ, 50, 80, 2);
+        generateBlockRare(silica_sand, world, random, chunkX, chunkZ, 50, 80, 16);
+        generateBlock(magnesite_ore, world, random, chunkX, chunkZ, 24, 64, 4);
 
     }
 
@@ -58,6 +61,21 @@ public class ModWorldGen implements IWorldGenerator {
             int y = minY + random.nextInt(deltaY);
             int z = chunkZ * 16 + random.nextInt(16);
             gen.generate(world, random, new BlockPos(x, y, z));
+        }
+
+    }
+
+    private void generateBlockRare(WorldGenerator gen, World world, Random random, int chunkX, int chunkZ, int minY, int maxY, int chanceDivideBy){
+
+        if(minY>maxY || minY<0 || maxY>256)
+            throw new IllegalArgumentException("An ore attempted to generate out of bounds.");
+
+        int deltaY = maxY - minY + 1;
+
+        if(random.nextInt(chanceDivideBy) == 0) {
+            int x = chunkX * 16 + random.nextInt(16);
+            int y = minY + random.nextInt(deltaY);
+            int z = chunkZ * 16 + random.nextInt(16);gen.generate(world, random, new BlockPos(x, y, z));
         }
 
     }
